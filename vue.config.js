@@ -5,6 +5,15 @@ function resolve(dir) {
 }
 
 module.exports = {
+  devServer: {
+    // port: port,
+    open: true,
+    overlay: {
+      warnings: false,
+      errors: true
+    },
+    before: require('./vue-element-admin/mock/mock-server.js')
+  },
   chainWebpack: config => {
     config.module
       .rule('eslint')

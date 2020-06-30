@@ -1,5 +1,7 @@
 import Root from '@apps/root'
 
+import Layout from '@vue-element-admin/layout/index'
+
 const routes = [
   {
     path: '/login',
@@ -13,20 +15,42 @@ const routes = [
   },
   {
     path: '/',
-    // component: () => import('@apps/root/index.vue'),
-    component: () => import('@vue-element-admin/layout/index'),
+    component: Layout,
+    // component: () => import('@vue-element-admin/layout/index'),
+    redirect: { name: 'Root' },
     // meta: {
-    //   breadcrumb: { label: 'Index', icon: 'widgets', app: 'root' }
+    //   breadcrumb: { label: 'Home' }
     // },
     children: [
       {
-        path: '',
-        name: 'Home',
+        path: '/root',
+        name: 'Root',
         component: Root,
-        meta: { title: 'Dashboard', icon: 'dashboard' }
+        meta: { title: 'Root', icon: 'dashboard' }
       }
     ]
-  }
+  },
+  // {
+  //   path: '/example',
+  //   component: Layout,
+  //   redirect: '/example/table',
+  //   name: 'Example',
+  //   meta: { title: 'Example', icon: 'el-icon-s-help' },
+  //   children: [
+  //     {
+  //       path: 'table',
+  //       name: 'Table',
+  //       component: () => import('@vue-element-admin/views/table/index'),
+  //       meta: { title: 'Table', icon: 'table' }
+  //     },
+  //     {
+  //       path: 'tree',
+  //       name: 'Tree',
+  //       component: () => import('@vue-element-admin/views/tree/index'),
+  //       meta: { title: 'Tree', icon: 'tree' }
+  //     }
+  //   ]
+  // },
 ]
 
 // Always leave this as last one

@@ -5,7 +5,6 @@ const dynamicRoutes = [
     redirect: '/nested/menu1',
     name: 'Nested',
     meta: {
-      roles: ['editor'],
       title: 'Nested',
       icon: 'nested'
     },

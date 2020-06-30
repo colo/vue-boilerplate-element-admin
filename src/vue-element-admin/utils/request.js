@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { MessageBox, Message } from 'element-ui'
-// import store from '@vue-element-admin/store'
+// import store from '@/store'
 import store from '@/store'
 import { getToken } from '@vue-element-admin/utils/auth'
 
