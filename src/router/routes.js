@@ -17,17 +17,18 @@ const routes = [
     path: '/',
     component: Layout,
     // component: () => import('@vue-element-admin/layout/index'),
-    redirect: { name: 'Root' },
-    name: 'Home',
-    meta: {
-      breadcrumb: { label: 'Home' }
-    },
+    redirect: { name: 'Home' },
+    // redirect: '/root',
+    // name: 'Home',
+    // meta: {
+    //   breadcrumb: { label: 'Home' }
+    // },
     children: [
       {
-        path: 'root',
-        name: 'Root',
+        path: 'home',
+        name: 'Home',
         component: Root,
-        meta: { title: 'Root', icon: 'dashboard' }
+        meta: { title: 'Home', icon: 'dashboard' }
       }
     ]
   },
