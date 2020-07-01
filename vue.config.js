@@ -1,8 +1,12 @@
 const path = require('path')
 
+const defaultSettings = require('./src/vue-element-admin/settings.js')
+
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
+
+const name = defaultSettings.title || 'vue Admin Template' // page title
 
 module.exports = {
   devServer: {
@@ -14,6 +18,22 @@ module.exports = {
     },
     before: require('./vue-element-admin/mock/mock-server.js')
   },
+  /**
+  *  vue-element-admin rules
+  **/
+  configureWebpack: {
+    // provide the app's title in webpack's name field, so that
+    // it can be accessed in index.html to inject the correct title.
+    name: name,
+    // resolve: {
+    //   alias: {
+    //     '@': resolve('src')
+    //   }
+    // }
+  },
+  /**
+  *  vue-element-admin rules
+  **/
   chainWebpack: config => {
     config.module
       .rule('eslint')

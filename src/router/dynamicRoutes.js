@@ -58,7 +58,7 @@ const dynamicRoutes = [
   },
 
   {
-    path: 'external-link',
+    path: '/external-link',
     component: () => import('@vue-element-admin/layout/index'),
     children: [
       {
